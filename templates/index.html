@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask Index</title>
+</head>
+<body>
+
+<h1>Flask web server test</h1>
+<p>test page</p>
+
+
+{% if username %}
+    <p>사용자 이름: {{ username }}</p>
+{% endif %}
+
+{% if option2ref%}
+    <ul>
+    {% for option,ref in option2ref.items() %}
+        <li><a href="/korign/{{ ref }}/{{ username }}"> {{ option }}</a></li>
+        <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>no option</p>
+{% endif %}
+
+
+<!-- 
+{% if user_list %}
+    <ul>
+    {% for user in user_list %}
+        <li><a href="/detail/{{ user.id }}/"> "user.id:" {{ user.id }} "user id:" {{ user.userid }}  "password:" {{ user.password }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>no uesr</p>
+{% endif %} -->
+
+</body>
+</html>
